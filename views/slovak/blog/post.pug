@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+    |!{getComponent(originalLang, "head", { title: attributes.title })}
+
+    body
+        .container
+            |!{getComponent(originalLang, "navbar", { getIcon })}
+
+            main
+                if getProperty(lang, "name") !== getProperty(originalLang, "name")
+                    .message-container
+                        span.message.warning #{getString(originalLang, "templateNotTranslated").replace(' {{ language }} ', ` ${getProperty(originalLang, "name")} `)}
+
+                nav.breadcrumb 
+                    a(href='/blog') Blog
+                    span >
+                    span #{attributes.title}
+                        
+
+                hgroup
+                    h1 #{attributes.title}
+                    p.muted Naposledy upravené: #{formatDate(originalLang, new Date(updated))} 
+
+                .content !{content}
+
+                hr
+
+                if created
+                    p.muted Vytvorené: #{formatDate(originalLang, new Date(created))}
+
+            |!{getComponent(originalLang, "footer")}   

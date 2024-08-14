@@ -1,0 +1,41 @@
+
+doctype html
+html(lang="en")
+    |!{getComponent(originalLang, "head", { title: "Settings" })}
+    
+    body
+        .container
+            |!{getComponent(originalLang, "navbar", { getIcon })}
+
+            main
+                if getProperty(lang, "name") !== getProperty(originalLang, "name")
+                    .message-container
+                        span.message.warning #{getString(originalLang, "pageNotTranslated").replace(' {{ language }} ', ` ${getProperty(originalLang, "name")} `)}
+
+                if query.success
+                    .message-container
+                        span.message.success #{getString(originalLang, "successfullySaved")}
+
+                if query.error
+                    .message-container
+                        span.message.error #{query.message || getString(originalLang, "unknownError")}
+
+                hgroup
+                    h1 Settings
+                    p You can change your settings here.
+
+                form.settings(action="/settings/change", name="settings")
+                    .language
+                        label(for="language") Language
+                        select(name="language", id="language")
+                            each language in Object.entries(getString(originalLang, "languages"))
+                                option(value=language[0], selected=originalLang === language[0]) #{language[1]} #{getProperty(language[0], "unfinished") ? "(UNFINISHED)" : ""}
+
+                    .theme
+                        label(for="theme") Theme
+                        select(name="theme", id="theme")
+                           option(value="wip", selected) Work in progress...
+
+                    button.primary(type="submit") Save
+
+            |!{getComponent(originalLang, "footer")}

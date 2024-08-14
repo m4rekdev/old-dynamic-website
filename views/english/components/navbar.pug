@@ -1,0 +1,28 @@
+nav.main
+    if getProperty(lang, "name") !== getProperty(originalLang, "name") 
+        .message-container
+            span.message.warning #{getString(originalLang, "componentNotTranslated").replace(' {{ language }} ', ` ${getProperty(originalLang, "name")} `)}
+
+    .content
+        a.title(href="/") #{name}
+
+        ul.main
+            li
+                a(href="/").
+                    !{getIcon('house')}
+                    Home
+            li
+                a(href="/blog").
+                    !{getIcon('notebook-pen')}
+                    Blog
+
+            each page of allPages 
+                li 
+                    a(href="/" + page.id).
+                        !{getIcon(page.attributes.icon)}
+                        #{page.attributes.title}
+                        
+            li
+                a(href="/settings").
+                    !{getIcon('settings')}
+                    Settings

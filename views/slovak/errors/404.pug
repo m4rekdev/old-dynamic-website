@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    |!{getComponent(originalLang, "head", { title: "Nenájdené" })}
+    
+    body
+        .container
+            |!{getComponent(originalLang, "navbar", { getIcon })}
+
+            main
+                if getProperty(lang, "name") !== getProperty(originalLang, "name") 
+                    .message-container
+                        span.message.warning #{getString(originalLang, "pageNotTranslated").replace(' {{ language }} ', ` ${getProperty(originalLang, "name")} `)}
+
+                hgroup
+                    h1 Chyba 404 (Nenájdené)
+                    p Možno ste zle napísali link alebo som ho omylom vymazal.
+
+                a.button.primary(href="/") Domov
+                    
+            |!{getComponent(originalLang, "footer")}

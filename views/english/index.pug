@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    |!{getComponent(originalLang, "head")}
+    
+    body
+        .container
+            |!{getComponent(originalLang, "navbar", { getIcon })}
+
+            main
+                if getProperty(lang, "name") !== getProperty(originalLang, "name") 
+                    .message-container
+                        span.message.warning #{getString(originalLang, "pageNotTranslated").replace(' {{ language }} ', ` ${getProperty(originalLang, "name")} `)}
+
+                hgroup
+                    h1 Home
+                    p I don't know what to put here yet
+
+                p in the meantime you can:
+                p > check out <a href="/blog">my blog</a>
+                p > learn something <a href="/about-me">about me</a>
+                p > write me a <a href="/contact">message</a>
+                
+            |!{getComponent(originalLang, "footer")}

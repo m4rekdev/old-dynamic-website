@@ -1,0 +1,57 @@
+{
+    "english": {
+        "name": "English",
+        "id": "english",
+
+        "dateFormat": "dd MMM, y hh:mm a",
+
+        "strings": {
+            "languages": {
+                "english": "English",
+                "slovak": "Slovak"
+            },
+
+            "postNotTranslated": "This post has not been translated to {{ language }} yet.",
+            "pageNotTranslated": "This post has not been translated to {{ language }} yet.",
+            "componentNotTranslated": "This component has not been translated to {{ language }} yet.",
+            "templateNotTranslated": "This template has not been translated to {{ language }} yet.",
+
+            "successfullySaved": "Successfully saved.",
+            "unknownError": "Something went wrong!"
+        },
+
+        "feed": {
+            "title": "{{ name }} / blog",
+            "description": "a personal blog, where i write about interesting stuff",
+            "language": "en"
+        }
+    },
+
+    "slovak": {
+        "name": "Slovenčina",
+        "id": "slovak",
+
+        "dateFormat": "dd.LL.y HH:mm",
+
+        "strings": {
+            "languages": {
+                "english": "Angličtina",
+                "slovak": "Slovenčina"
+            },
+
+            "postNotTranslated": "Tento príspevok ešte nebol preložený do slovenčiny.",
+            "pageNotTranslated": "Táto stránka ešte nebola preložená do slovenčiny.",
+            "componentNotTranslated": "Tento komponent ešte nebol preložený do slovenčiny.",
+            "templateNotTranslated": "Táto šablóna ešte nebola preložená do slovenčiny.",
+
+            "successfullySaved": "Úspešne uložené.",
+            "unknownError": "Niečo sa pokazilo!"
+        },
+
+        "feed": {
+            "title": "{{ name }} / blog",
+            "description": "osobný blog, kde píšem o zaujímavých veciach",
+            "language": "sk"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "m4rek.dev",
+  "version": "1.0",
+  "main": "app.js",
+  "type": "module",
+  "repository": { "type": "git", "url": "https://github.com/m4rekdev/website.git" },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "feed": "^4.2.2",
+    "front-matter": "^4.0.2",
+    "highlight.js": "^11.10.0",
+    "hyper-express": "^6.16.4",
+    "luxon": "^3.5.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-abbr": "^2.0.0",
+    "markdown-it-emoji": "^3.0.0",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-ins": "^4.0.0",
+    "markdown-it-mark": "^4.0.0",
+    "markdown-it-sub": "^2.0.0",
+    "markdown-it-sup": "^2.0.0",
+    "pug": "^3.0.3"
+  }
+}

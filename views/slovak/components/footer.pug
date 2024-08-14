@@ -1,0 +1,11 @@
+footer
+    if getProperty(lang, "name") !== getProperty(originalLang, "name") 
+        .message-container
+            span.message.warning #{getString(originalLang, "componentNotTranslated").replace(' {{ language }} ', ` ${getProperty(originalLang, "name")} `)}
+    
+    .content
+        a(href="/uncopyright") Uncopyright
+
+        a.center(href="/unlicense") Unlicense
+        
+        p #{name} #{version} (<a href="#{repository.url}">Zdroj</a>)

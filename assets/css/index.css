@@ -1,0 +1,457 @@
+:root {
+    --base-bg: #1e1e2e;
+    --secondary-bg: #181825;
+    --tertiary-bg: #11111b;
+
+    --surface-element-0: #313244;
+    --surface-element-1: #45475a;
+    --surface-element-2: #585b70;
+
+    --text-color: #cdd6f4;
+
+    --accent-color: #74c7ec;
+
+    --subheading-color-1: #a6adc8;
+    --subheading-color-2: #bac2de;
+
+    --label-color-1: #a6adc8;
+    --label-color-2: #bac2de;
+
+    --subtle-text-color: #7f849c;
+
+    --link-color: #89b4fa;
+
+    --success-color: #a6e3a1;
+    --warning-color: #f9e2af;
+    --error-color: #f38ba8;
+
+    --selection-bg: rgba(147, 153, 178, 0.3);
+
+    --ins-bg: rgba(166, 227, 161, 0.2);
+    --ins-text-color: #a6e3a1;
+
+    --del-bg: rgba(243, 139, 168, 0.2);
+    --del-text-color: #f38ba8;
+
+    --mark-bg: rgba(249, 226, 175, 0.2);
+    --mark-text-color: #f9e2af;
+
+    --focused-border-color: #b4befe;
+
+    --code-line-numbers: #7f849c;
+    --code-keyword-color: #cba6f7;
+    --code-string-color: #a6e3a1;
+    --code-symbol-atom-color: #f38ba8;
+    --code-escape-sequences-regex-color: #f5c2e7;
+    --code-comment-color: #9399b2;
+    --code-constant-number-color: #fab387;
+    --code-operator-color: #89dceb;
+    --code-brace-delimiter-color: #9399b2;
+    --code-method-function-color: #89b4fa;
+    --code-parameter-color: #eba0ac;
+    --code-builtin-color: #f38ba8;
+    --code-class-interface-annotation-metadata-enum-type-color: #f9e2af;
+    --code-enum-variant-color: #94e2d5;
+    --code-property-color: #89b4fa;
+    --code-attribute-color: #f9e2af;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    font-size: 70%;
+}
+
+body {
+    background: var(--base-bg);
+    color: var(--text-color);
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.š;
+    letter-spacing: 0.025rem;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-block: 20px;
+}
+
+h2 {
+    font-size: 3.75rem;
+    margin-block: 20px;
+}
+
+h3 {
+    font-size: 3.5rem;
+    margin-block: 20px;
+}
+
+h4 {
+    font-size: 3.25rem;
+    margin-block: 20px;
+}
+
+h5 {
+    font-size: 3rem;
+    margin-block: 20px;
+}
+
+h6 {
+    font-size: 2.75rem;
+    margin-block: 20px;
+}
+
+p {
+    margin-block: 20px;
+    line-height: 1.6;
+}
+
+hgroup {
+    padding-block: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+hgroup * {
+    margin-block: 0;
+}
+
+hgroup p {
+    color: var(--subheading-color-1);
+}
+
+p.muted {
+    align-items: center;
+    color: var(--subtle-text-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration-thickness: 2px;
+}
+
+a:focus-visible,
+select:focus-visible,
+input:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--focused-border-color);
+    outline-offset: 3px;
+}
+
+a:focus-visible {
+    border-radius: 3px;
+}
+
+hr {
+    margin-block: 20px;
+    color: var(--surface-element-2);
+}
+
+img {
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+blockquote {
+    background: var(--surface-element-0);
+    border-left: 5px solid var(--accent-color);
+    box-shadow: 5px 5px 10px var(--base-bg);
+    padding: 20px;
+    border-radius: 3px;
+}
+
+code:not(pre code) {
+    padding: 3px 5px;
+    border-radius: 5px;
+    background: var(--surface-element-0);
+    line-height: 1.8;
+}
+
+pre {
+    padding: 10px;
+    border-radius: 5px;
+    background: var(--surface-element-0);
+    overflow-x: auto;
+}
+
+table {
+    display: block;
+    max-width: max-content;
+    border-collapse: collapse;
+    background: var(--surface-element-0);
+    border-radius: 10px;
+    overflow-x: auto;
+    table-layout: fixed;
+}
+
+td,
+th {
+    padding: 10px;
+}
+
+td:not(:last-child),
+th:not(:last-child) {
+    border-right: 1px solid var(--surface-element-2);
+}
+
+tr:nth-child(even) {
+    background: var(--surface-element-1);
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--accent-color);
+    color: var(--surface-element-0);
+}
+
+th:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    overflow-wrap: break-word;
+}
+
+nav.main {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 10%;
+    background: var(--secondary-bg);
+}
+
+nav.main .content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav.main a.title {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 2.25rem;
+}
+
+nav.main ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 30px;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+nav.main ul.main {
+    margin-inline: auto;
+}
+
+nav.main a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+nav.main a svg {
+    color: var(--text-color);
+}
+
+nav.breadcrumb {
+    display: flex;
+    gap: 10px;
+}
+
+main {
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    flex: 1;
+}
+
+.message-container {
+    margin-inline: auto;
+    align-self: center;
+}
+
+span.message {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 16px;
+    margin-block: 10px;
+    color: var(--surface-element-0);
+}
+
+span.message.success {
+    background: var(--success-color);
+}
+
+span.message.warning {
+    background: var(--warning-color);
+}
+
+span.message.error {
+    background: var(--error-color);
+}
+
+form.search {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    margin-block: 20px;
+    /* background: var(--secondary-bg); */
+    border-radius: 10px;
+}
+
+form.settings * {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+select,
+input,
+button,
+.button {
+    outline: none;
+    background: var(--surface-element-0);
+    border: none;
+    padding: 10px 30px;
+    margin: 10px;
+    color: var(--text-color);
+    border-radius: 10px;
+}
+
+button,
+.button {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+button.primary,
+.button.primary {
+    background: var(--accent-color);
+    color: var(--surface-element-0);
+}
+
+ins,
+del,
+mark {
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+ins {
+    background: var(--ins-bg);
+    color: var(--ins-text-color);
+    text-decoration: none;
+}
+
+del {
+    background: var(--del-bg);
+    color: var(--del-text-color);
+}
+
+mark {
+    background: var(--mark-bg);
+    color: var(--mark-text-color);
+}
+
+dl dd {
+    margin-left: 20px;
+}
+
+.posts {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 10%;
+    background: var(--secondary-bg);
+}
+
+footer .content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+footer .content .center {
+    flex-grow: 1;
+    text-align: center;
+    min-width: max-content;
+}
+
+.hljs-comment {
+    color: var(--code-comment-color);
+}
+
+.hljs-keyword {
+    color: var(--code-keyword-color);
+}
+
+.hljs-variable.constant_ {
+    color: var(--code-constant-number-color);
+}
+
+.hljs-variable.language_,
+.hljs-built_in {
+    color: var(--code-builtin-color);
+}
+
+.hljs-params {
+    color: var(--code-parameter-color);
+}
+
+.hljs-number {
+    color: var(--code-constant-number-color);
+}
+
+.hljs-title.function_,
+.hljs-function {
+    color: var(--code-method-function-color);
+}
+
+.hljs-title.class_ {
+    color: var(--code-class-interface-annotation-metadata-enum-type-color);
+}
+
+.hljs-string {
+    color: var(--code-string-color);
+}
+
+.hljs-subst {
+    color: var(--code-class-interface-annotation-metadata-enum-type-color)
+}
+
+.hljs-property {
+    color: var(--code-property-color);
+}
+
+.hljs-attr {
+    color: var(--code-attribute-color);
+}

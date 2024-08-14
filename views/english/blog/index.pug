@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+    |!{getComponent(originalLang, "head", { title: "Blog" })}
+
+    body
+        .container
+            |!{getComponent(originalLang, "navbar", { getIcon })}
+            
+            main
+                if getProperty(lang, "name") !== getProperty(originalLang, "name")
+                    .message-container
+                        span.message.warning #{getString(originalLang, "pageNotTranslated").replace(' {{ language }} ', ` ${getProperty(originalLang, "name")} `)}
+
+                hgroup
+                    h1 Blog
+                    p a personal blog, where i write about interesting stuff
+
+                p
+                    a(href='/blog/feed/' + originalLang + '.json') JSON Feed
+                p
+                    a(href='/blog/feed/' + originalLang + '.xml') RSS/Atom Feed
+
+                form.search(action="")
+                    .search
+                        input#search(name="search", placeholder="Search...", value=query.search)
+
+                    .sort
+                        .styled-select 
+                            select#sort(name="sort")
+                                option(selected, disabled) Sort by...
+                                option(value="updated", selected=query.sort === "updated") Last updated
+                                option(value="created", selected=query.sort === "created") Creation date
+                                option(value="a-z", selected=query.sort === "a-z") A-Z
+                                option(value="z-a", selected=query.sort === "z-a") Z-A
+
+                    button.primary(type="submit") Submit
+
+                if query.search
+                    - allPosts = allPosts.filter((post) => post.attributes.title.toLowerCase().includes(query.search))
+
+                if query.sort === "created"
+                    - allPosts = allPosts.sort((a, b) => b.created - a.created)
+                else if query.sort === "a-z"
+                    - allPosts.sort((a, b) => a.attributes.title.localeCompare(b.attributes.title))
+                else if query.sort === "z-a"
+                    - allPosts.sort((a, b) => b.attributes.title.localeCompare(a.attributes.title))
+                else
+                    - allPosts = allPosts.sort((a, b) => b.updated - a.updated)
+
+                .posts
+                    each post of allPosts
+                        .post
+                            p.muted #{formatDate(originalLang, new Date(post.updated))} 
+                                a.post-name(href="/blog/" + post.id) #{post.attributes.title}
+                    
+                    if !allPosts.length
+                        p No results.
+
+            |!{getComponent(originalLang, "footer")}   

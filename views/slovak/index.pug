@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    |!{getComponent(originalLang, "head")}
+    
+    body
+        .container
+            |!{getComponent(originalLang, "navbar", { getIcon })}
+
+            main
+                if getProperty(lang, "name") !== getProperty(originalLang, "name") 
+                    .message-container
+                        span.message.warning #{getString(originalLang, "pageNotTranslated").replace(' {{ language }} ', ` ${getProperty(originalLang, "name")} `)}
+
+                hgroup
+                    h1 Domov
+                    p Ešte neviem čo sem dať
+
+                p zatiaľ môžete:
+                p > prezrieť si <a href="/blog">môj blog</a>
+                p > naučiť sa niečo <a href="/about-me">o mne</a>
+                p > napísať mi <a href="/contact">správu</a>
+                
+            |!{getComponent(originalLang, "footer")}

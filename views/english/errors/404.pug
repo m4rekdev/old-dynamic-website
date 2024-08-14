@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    |!{getComponent(originalLang, "head", { title: "Not Found" })}
+    
+    body
+        .container
+            |!{getComponent(originalLang, "navbar", { getIcon })}
+
+            main
+                if getProperty(lang, "name") !== getProperty(originalLang, "name") 
+                    .message-container
+                        span.message.warning #{getString(originalLang, "pageNotTranslated").replace(' {{ language }} ', ` ${getProperty(originalLang, "name")} `)}
+
+                hgroup
+                    h1 Error 404 (Not Found)
+                    p You might have misspelled a link or I might have accidentally deleted it.
+
+                a.button.primary(href="/") Home
+                    
+            |!{getComponent(originalLang, "footer")}
