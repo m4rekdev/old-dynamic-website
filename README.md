@@ -1,3 +1,5 @@
+**archived because i realized that a static site is enough.**
+
 # website
 my personal website with multiple languages, dynamic posts and pages
 
