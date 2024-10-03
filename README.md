@@ -1,4 +1,4 @@
-**archived because i realized that a static site is enough.**
+~~**archived because i realized that a static site is enough.**~~ nevermind im gonna use it
 
 # website
 my personal website with multiple languages, dynamic posts and pages
